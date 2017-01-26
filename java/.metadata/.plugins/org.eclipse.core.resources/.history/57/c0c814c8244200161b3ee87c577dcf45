@@ -1,0 +1,67 @@
+import java.util.*;
+
+public class DotProduct {
+    private static long minDotProduct(int[] a, int[] b) {
+        //write your code here
+    	int[]b1=new int[b.length];
+    	int[]a1=new int[a.length];
+    	for(int i=0;i<b.length;i++){
+    		a1[i]=a[i];
+    		b1[i]=b[i];
+    	}
+        long result = 0;
+        Arrays.sort(b);
+        Arrays.sort(a);
+        int max=0,min=0;
+        for(int i=0;i<=a.length;i++){
+        	//result+=a[a.length-i]*b[i];
+        }
+        /*for (int i = 0; i < a.length; i++) {
+            max=max(a1);
+            min=min(b1);
+            a1[max]=-2147483648;
+            b1[min]=2147483647;
+        	result += a[max] * b[min];
+        	
+        }*/
+        return result;
+    }
+    private static int max(int[] a){
+    	
+    	int max= -2147483648;
+    	int temp=-1;
+    	for(int i=0;i<a.length;i++){
+    		if(max<=a[i]){
+    			max=a[i];
+    			temp=i;
+    		}
+    	}
+    	
+    	return temp;
+    }
+    private static int min(int[]b){
+    	int min=2147483647;
+    	int temp=-1;
+    	for(int i=0;i<b.length;i++){
+    		if(min>=b[i]){
+    			min=b[i];
+    			temp=i;
+    		}
+    	}
+    	return temp;
+    }
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        int[] a = new int[n];
+        for (int i = 0; i < n; i++) {
+            a[i] = scanner.nextInt();
+        }
+        int[] b = new int[n];
+        for (int i = 0; i < n; i++) {
+            b[i] = scanner.nextInt();
+        }
+        System.out.println(minDotProduct(a, b));
+    }
+}
+

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>Greedy</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>src/Change.java</name>
+			<type>1</type>
+			<location>C:/Users/prasanna/Videos/Learning/cousera/AlgoToolBox/java/Greedy/src/Change.java</location>
+		</link>
+		<link>
+			<name>src/CoveringSegments.java</name>
+			<type>1</type>
+			<location>C:/Users/prasanna/Videos/Learning/cousera/AlgoToolBox/java/Greedy/src/CoveringSegments.java</location>
+		</link>
+		<link>
+			<name>src/DifferentSummands.java</name>
+			<type>1</type>
+			<location>C:/Users/prasanna/Videos/Learning/cousera/AlgoToolBox/java/Greedy/src/DifferentSummands.java</location>
+		</link>
+		<link>
+			<name>src/DotProduct.java</name>
+			<type>1</type>
+			<location>C:/Users/prasanna/Videos/Learning/cousera/AlgoToolBox/java/Greedy/src/DotProduct.java</location>
+		</link>
+		<link>
+			<name>src/FractionalKnapsack.java</name>
+			<type>1</type>
+			<location>C:/Users/prasanna/Videos/Learning/cousera/AlgoToolBox/java/Greedy/src/FractionalKnapsack.java</location>
+		</link>
+	</linkedResources>
+</projectDescription>

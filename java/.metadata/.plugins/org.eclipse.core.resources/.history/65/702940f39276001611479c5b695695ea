@@ -1,0 +1,121 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+
+public class BTree {
+	static int order;
+	Node root;
+	public BTree(int order){
+		this.order = order;
+		root = new Node(order,NULL);
+	}
+	
+	//Search
+	public Node search(Node root, int elem){
+		int i=0;
+		while((i<root.c) && (elem>root.data.get(i))) i++;
+		if(i<=root.c && elem == root.data.get(i)) return root;
+		if(root.isLeaf) return null;
+		else return search(root.link.get(i),elem);		
+	}
+	
+	public void split(Node node1, int x, Node node2){
+		Node node3 = new Node(order,null);
+		node3.isLeaf = node2.isLeaf;
+		node3.c = order-1;
+		
+		for(int i=0;i<order-1;i++){
+			node3.data.add(i,node2.data.get(i+order));
+		}
+		if(!node2.isLeaf){
+			for(int j=0;j<order;j++){
+				node3.link.add(j,node2.link.get(j+order));
+			}
+		}
+		node2.c=order-1;
+		
+		for(int i=node1.c;i>x;i--){
+			node1.link.add(i+1,node1.link.get(i));
+		}
+		node1.link.add(x+1,node3);
+		
+		for(int j=node1.c;j>x;j--){
+			node1.data.add(j+1,node1.data.get(j));
+		}
+		node1.data.add(x,node2.data.get(order-1));
+		node2.data.add(order-1,0);
+		
+		for(int j=0;j<order-1;j++){
+			node2.data.add(j+order,0);
+		}
+		node1.c++;
+	}
+	
+	public void nonFullInsert(Node node, int elem){
+		int i = node.c;
+		if(node.isLeaf){
+			while(i>=1 && elem < node.data.get(i-1)){
+				node.data.add(i,node.data.get(i-1));
+				i--;
+			}
+			
+			node.data.add(i,elem);
+			node.c++;
+		}else{
+			int  j=0;
+			while(j<node.c && elem > node.data.get(j))j++;
+			
+			if(node.link.get(j).c == (order*2)-1){
+				split(node,j,node.link.get(j));
+				if(elem > node.data.get(j)) j++;
+			}
+			nonFullInsert(node.link.get(j),elem);
+		}		
+	}
+	public void insert(BTree bt, int elem){
+		Node node1 = bt.root;
+		if(node1.c == ((2*order)-1)){
+			Node node2 = new Node(order,null);
+			bt.root = node2;
+			node2.isLeaf = false;
+			node2.c = 0;
+			node2.link.add(0,node1);
+			split(node2,0,node1);
+			nonFullInsert(node2,elem);
+		}else{
+			nonFullInsert(node1,elem);
+		}
+	}
+	//print
+	public void print(Node node){
+		for(int i=0;i<node.c;i++)
+			System.out.print(node.data.get(i)+" ");
+		
+		if(!node.isLeaf){
+			for(int j=0;j<=node.c;j++){
+				if(node.link.get(j)!= null){
+					System.out.println();
+					print(node.link.get(j));
+				}
+			}
+		}
+	}
+}
+
+class Node{
+	static int order;
+	ArrayList<Integer> data;
+	ArrayList<Node>link;
+	int c; // count the number of data in node
+	boolean isLeaf;
+	Node parent;
+	
+	public Node(int orderInput,Node parent){
+		order = orderInput;
+		this.parent = parent;
+		data = new ArrayList<Integer>(2*order -1);
+		link = new ArrayList<Node>(2*order);
+		isLeaf = true;
+		c=0;
+	}
+}

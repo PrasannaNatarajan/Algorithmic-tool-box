@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>DyProg</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>src/EditDistance.java</name>
+			<type>1</type>
+			<location>C:/Users/prasanna/Videos/Learning/cousera/AlgoToolBox/java/DyProg/src/EditDistance.java</location>
+		</link>
+		<link>
+			<name>src/Knapsack.java</name>
+			<type>1</type>
+			<location>C:/Users/prasanna/Videos/Learning/cousera/AlgoToolBox/java/DyProg/src/Knapsack.java</location>
+		</link>
+		<link>
+			<name>src/LCS3.java</name>
+			<type>1</type>
+			<location>C:/Users/prasanna/Videos/Learning/cousera/AlgoToolBox/java/DyProg/src/LCS3.java</location>
+		</link>
+		<link>
+			<name>src/PlacingParentheses.java</name>
+			<type>1</type>
+			<location>C:/Users/prasanna/Videos/Learning/cousera/AlgoToolBox/java/DyProg/src/PlacingParentheses.java</location>
+		</link>
+		<link>
+			<name>src/PrimitiveCalculator.java</name>
+			<type>1</type>
+			<location>C:/Users/prasanna/Videos/Learning/cousera/AlgoToolBox/java/DyProg/src/PrimitiveCalculator.java</location>
+		</link>
+	</linkedResources>
+</projectDescription>

@@ -1,0 +1,70 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+
+public class BTree {
+	static int sizeOfNode;
+	
+	static Node root;
+	
+	public static void main(String[] args){
+		Scanner scanner = new Scanner(System.in);
+		sizeOfNode = scanner.nextInt();
+		BTree btree = new BTree();
+		btree.insert(root, sizeOfNode);
+	}
+	
+	public BTree(){
+		root = new Node();
+	}
+	
+	private Node insert(Node root,int x){
+		if(root==null){
+			root = new Node();
+			root.data.add(x);
+			
+		}
+		else{
+			int size = root.data.size();
+			int mid = size/2;
+			if(size+1<=sizeOfNode){
+				root.data.add(x);
+			}
+			else{
+				Node newNode = new Node();
+				newNode.data.add(0,root.data.get(mid));
+				newNode.links.add(0, root);
+				Node splitChild = new Node(); // right child
+				for(int i=0;i<=size;i++){
+					if(i>mid){
+						splitChild.data.add(root.data.get(i));
+						splitChild.links.add(root.links.get(i));
+						if(i==size)splitChild.links.add(root.links.get(i+1));
+						root.data.add(i, null);
+						root.links.add(i,null);
+					}
+					System.out.println(splitChild.data.get(i));
+				}
+				newNode.links.add(splitChild);
+				
+				if(newNode.data.get(0) < x){
+					
+				}
+				return newNode;
+			}
+		}
+		
+		return root;
+	}
+}
+
+class Node{
+	ArrayList<Integer> data;
+	ArrayList<Node> links;
+	static int sizeOfNode  = BTree.sizeOfNode;
+	public Node(){
+	data = new ArrayList(sizeOfNode);
+	links = new ArrayList(sizeOfNode+1);
+	}
+	
+}

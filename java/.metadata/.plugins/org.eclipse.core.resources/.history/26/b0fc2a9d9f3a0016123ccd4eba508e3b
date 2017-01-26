@@ -1,0 +1,15 @@
+
+public class GCD {
+	public static void main(String[] args){
+		int gcd = euclidGCD(357,234);
+		System.out.println(gcd);
+	}
+	public static int euclidGCD(int a,int b){
+		if(b==0){
+			return a;
+		}
+		int aPrime = a%b;
+		return euclidGCD(b,aPrime);
+		
+	}
+}

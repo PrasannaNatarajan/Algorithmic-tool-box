@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>DivanCon</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>Sorting.java</name>
+			<type>1</type>
+			<location>C:/Users/prasanna/Videos/Learning/cousera/AlgoToolBox/java/DivanCon/src/Sorting.java</location>
+		</link>
+		<link>
+			<name>src/BinarySearch.java</name>
+			<type>1</type>
+			<location>C:/Users/prasanna/Videos/Learning/cousera/AlgoToolBox/java/DivanCon/src/BinarySearch.java</location>
+		</link>
+		<link>
+			<name>src/MajorityElement.java</name>
+			<type>1</type>
+			<location>C:/Users/prasanna/Videos/Learning/cousera/AlgoToolBox/java/DivanCon/src/MajorityElement.java</location>
+		</link>
+		<link>
+			<name>src/Sorting.java</name>
+			<type>1</type>
+			<location>C:/Users/prasanna/Videos/Learning/cousera/AlgoToolBox/java/DivanCon/src/Sorting.java</location>
+		</link>
+	</linkedResources>
+</projectDescription>
